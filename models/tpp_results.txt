@@ -1,0 +1,25 @@
+============================================================
+P09 — RecurrentTPP Evaluation Results
+============================================================
+
+Test set:          1100 sequences
+  Normal:          901
+  Anomalous:       199
+  Random AUC-PR:   0.181
+
+AUC-ROC:           0.9732
+AUC-PR:            0.8155
+Best F1:           0.8684
+  Precision:       0.7704
+  Recall:          0.9950
+  At threshold:    1.1770
+
+At 95th pct threshold (0.5172733462625908):
+  F1:              0.8024
+  Precision:       0.6700
+  Recall:          1.0000
+  FPR:             0.1088
+
+Training:
+  Epochs run:      40
+  Final NLL:       2.2076
