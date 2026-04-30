@@ -1,0 +1,22 @@
+============================================================
+P09 — Fusion Evaluation Results
+============================================================
+
+Fusion weights: TPP=0.7  GNN=0.30000000000000004
+
+Individual model AUC-ROC:
+  TPP   : 0.9772
+  GNN   : 0.9541
+  Fused : 0.9831
+
+Fused model:
+  AUC-ROC  : 0.9831
+  AUC-PR   : 0.8556
+  Best F1  : 0.8883
+  Precision: 0.8249
+  Recall   : 0.9624
+
+Strategy comparison:
+  weighted_avg   : F1=0.775  Prec=0.633  Rec=1.000  FPR=0.119
+  and_fusion     : F1=0.800  Prec=0.816  Rec=0.785  FPR=0.036
+  or_fusion      : F1=0.738  Prec=0.585  Rec=1.000  FPR=0.145
