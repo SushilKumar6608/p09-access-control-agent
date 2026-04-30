@@ -42,7 +42,7 @@ TEST_SEED     = 99
 TRAIN_ANOMALY = 0.05
 TEST_ANOMALY  = 0.20
 
-N_EPOCHS      = 40
+N_EPOCHS      = 30
 LR            = 1e-3
 BATCH_SIZE    = 256
 PATIENCE      = 999   # no early stopping — run all epochs
@@ -213,21 +213,16 @@ def main():
     train_path = "data/processed/train_events.csv"
     test_path  = "data/processed/test_events.csv"
 
-    if Path(train_path).exists() and Path(test_path).exists():
-        print("Loading existing event streams from data/processed/...")
-        train_df = pd.read_csv(train_path)
-        test_df  = pd.read_csv(test_path)
-    else:
-        print("Generating event streams...")
-        building_train = default_building()
-        building_train.anomaly_rate = TRAIN_ANOMALY
-        train_df = generate_event_stream(
-            n_days=TRAIN_DAYS, seed=TRAIN_SEED, building=building_train)
+    print("Generating event streams...")
+    building_train = default_building()
+    building_train.anomaly_rate = TRAIN_ANOMALY
+    train_df = generate_event_stream(
+        n_days=TRAIN_DAYS, seed=TRAIN_SEED, building=building_train)
 
-        building_test = default_building()
-        building_test.anomaly_rate = TEST_ANOMALY
-        test_df = generate_event_stream(
-            n_days=TEST_DAYS, seed=TEST_SEED, building=building_test)
+    building_test = default_building()
+    building_test.anomaly_rate = TEST_ANOMALY
+    test_df = generate_event_stream(
+        n_days=TEST_DAYS, seed=TEST_SEED, building=building_test)
 
     print(f"Train events: {len(train_df):,}  "
           f"(anomalous: {train_df['is_anomaly'].sum()})")

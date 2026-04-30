@@ -2,24 +2,24 @@
 P09 — GNN Evaluation Results
 ============================================================
 
-Test events:       3,719
-  Normal:          3,495
-  Anomalous:       224
-  Random AUC-PR:   0.060
+Test events:       3,915
+  Normal:          3,677
+  Anomalous:       238
+  Random AUC-PR:   0.061
 
-AUC-ROC:           0.8742
-AUC-PR:            0.2710
-Best F1:           0.3965
-  Precision:       0.3248
-  Recall:          0.5089
-  At threshold:    1.2743
+AUC-ROC:           0.8944
+AUC-PR:            0.2711
+Best F1:           0.3651
+  Precision:       0.2512
+  Recall:          0.6681
+  At threshold:    2.3354
 
-At 95th pct threshold (0.9100):
-  F1:              0.3894
-  Precision:       0.2837
-  Recall:          0.6205
-  FPR:             0.1004
+At 95th pct threshold (2.2460):
+  F1:              0.3524
+  Precision:       0.2388
+  Recall:          0.6723
+  FPR:             0.1387
 
 Training:
-  Epochs:          40
-  Final MSE:       0.001782
+  Epochs:          30
+  Final MSE:       0.004817
